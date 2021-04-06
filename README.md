@@ -22,8 +22,8 @@
 # Полезные ссылки
 
 * [**Расписание**](https://docs.google.com/spreadsheets/d/10EzebAGB0pJqWGTQJwtmyXQ0R9WNqSke9BzRHTAUadM/edit#gid=1226546861) презентаций.
+* **Новые** записи презентаций на [youtube](https://youtube.com/playlist?list=PLdLtk23ZM3V7HPXdvZj4dEYntgMFOwIr2)
 * Записи презентаций прошлого года на [youtube](https://www.youtube.com/playlist?list=PLdLtk23ZM3V5iepbbpiyHRNGK9GS2YP-E). 
-Там же должны появиться новые записи.
 * Хорошая (прошлогодняя) [**статья**](https://vk.com/@miptfpmi-kafedry-fpmi?anchor=kafedry-fpmi-nauka-fupm-matematicheskaya-fizika) про кафедры.
 
 # Анализ данных (Яндекс)
