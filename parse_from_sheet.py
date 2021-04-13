@@ -58,7 +58,7 @@ def lstrip_to_letter(s):
 
 
 def get_answers(df, title):
-    tmp_str = f'\n## {title}\n'
+    tmp_str = f'\n{title}\n'
     found = False
     for c in df.columns:
         answers = [lstrip_to_letter(ans)
@@ -83,10 +83,10 @@ for d in departs:
     info_str += f'\n## Количественные вопросы.\n'
     info_str += f'\n{d_numbers.to_markdown(index=False)}\n'
     info_str += get_answers(d_info.iloc[:,
-                            list(range(6, 13))+[19]], '\n## Общие вопросы.\n')
-    info_str += get_answers(d_info.iloc[:, 13:15], '\n## Про науку.\n')
-    info_str += get_answers(d_info.iloc[:, 15:17], '\n## Индустрия.\n')
-    info_str += get_answers(d_info.iloc[:, 17:19], '\n## Другое.\n')
+                            list(range(6, 13))+[19]], '## Общие вопросы.')
+    info_str += get_answers(d_info.iloc[:, 13:15], '## Про науку.')
+    info_str += get_answers(d_info.iloc[:, 15:17], '## Индустрия.')
+    info_str += get_answers(d_info.iloc[:, 17:19], '## Другое.')
 
 
 with open('README.md', 'w') as f:
