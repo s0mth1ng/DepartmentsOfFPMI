@@ -24,6 +24,9 @@
 * **Новые** записи презентаций на [youtube](https://youtube.com/playlist?list=PLdLtk23ZM3V7HPXdvZj4dEYntgMFOwIr2)
 * Записи презентаций прошлого года на [youtube](https://www.youtube.com/playlist?list=PLdLtk23ZM3V5iepbbpiyHRNGK9GS2YP-E). 
 * Хорошая (прошлогодняя) [**статья**](https://vk.com/@miptfpmi-kafedry-fpmi?anchor=kafedry-fpmi-nauka-fupm-matematicheskaya-fizika) про кафедры.
+* Сама [**форма**](https://forms.gle/PvodwpYUdCdKK2em8). (
+    Если Вы уже поступили, учитесь на кафедре и Вам есть чем поделиться, пожалуйста, заполните).
+* [**Ответы**](https://docs.google.com/spreadsheets/d/1dUn7uqnB2Ro6E5DU7LYEyITVDhJAYknUFAX6HGS4viE) на вопросы формы выше.
 
 # Анализ данных (Яндекс)
 
