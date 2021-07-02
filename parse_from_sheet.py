@@ -52,7 +52,7 @@ departs = sorted(list(set(df.iloc[:, 1])))
 def lstrip_to_letter(s):
     s = ' '.join([i for i in s.split() if len(i) > 0])
     for i in range(len(s)):
-        if s[i].isalpha():
+        if s[i].isalnum():
             return s[i:]
     return s
 
@@ -60,9 +60,12 @@ def lstrip_to_letter(s):
 def get_answers(df, title):
     tmp_str = f'\n{title}\n'
     found = False
-    for c in df.columns:
-        answers = [lstrip_to_letter(ans)
-                   for ans in df[c].dropna() if len(ans) > 1]
+    for c in df.columns[1:]:
+        answers = []
+        for ind, ans in enumerate(df[c]):
+            if ans is None or len(ans) <= 1:
+                continue
+            answers.append(f'**({df.iloc[ind, 0]})** {lstrip_to_letter(ans)}')
         if answers:
             found = True
             tmp_str += f'\n### {c}\n'
@@ -73,7 +76,18 @@ def get_answers(df, title):
     return ''
 
 
-info_str = ''
+info_str = '''
+# Полезные ссылки
+
+* Записи презентаций 2021 года на [youtube](https://youtube.com/playlist?list=PLdLtk23ZM3V7HPXdvZj4dEYntgMFOwIr2)
+* Записи презентаций 2020 года на [youtube](https://www.youtube.com/playlist?list=PLdLtk23ZM3V5iepbbpiyHRNGK9GS2YP-E). 
+* Хорошая (2020) [**статья**](https://vk.com/@miptfpmi-kafedry-fpmi?anchor=kafedry-fpmi-nauka-fupm-matematicheskaya-fizika) про кафедры.
+* Сама [**форма**](https://forms.gle/PvodwpYUdCdKK2em8). (Если Вы уже поступили, учитесь на кафедре и Вам есть чем поделиться, пожалуйста, заполните).
+* [**Ответы**](https://docs.google.com/spreadsheets/d/1dUn7uqnB2Ro6E5DU7LYEyITVDhJAYknUFAX6HGS4viE) на вопросы формы выше
+(Тоже самое, что в статье).
+
+'''
+
 for d in departs:
     d_info = df.loc[df[df.columns[1]] == d]
     d_numbers = d_info.iloc[:, 3:6].mean().round(2)
@@ -83,10 +97,10 @@ for d in departs:
     info_str += f'\n## Количественные вопросы.\n'
     info_str += f'\n{d_numbers.to_markdown(index=False)}\n'
     info_str += get_answers(d_info.iloc[:,
-                            list(range(6, 13))+[19]], '## Общие вопросы.')
-    info_str += get_answers(d_info.iloc[:, 13:15], '## Про науку.')
-    info_str += get_answers(d_info.iloc[:, 15:17], '## Индустрия.')
-    info_str += get_answers(d_info.iloc[:, 17:19], '## Другое.')
+                            [2]+list(range(6, 13))+[19]], '## Общие вопросы.')
+    info_str += get_answers(d_info.iloc[:, [2]+list(range(13, 15))], '## Про науку.')
+    info_str += get_answers(d_info.iloc[:, [2]+list(range(15, 17))], '## Индустрия.')
+    info_str += get_answers(d_info.iloc[:, [2]+list(range(17, 19))], '## Другое.')
 
 
 with open('README.md', 'w') as f:
